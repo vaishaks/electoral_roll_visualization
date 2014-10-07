@@ -1,3 +1,7 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .india {
     fill: none;
 }
@@ -48,4 +52,71 @@
 path:hover {
     opacity: 0.9;
     transition-duration: 0.2s;
-}	
+}
+
+#title {
+    width: 300px;
+    position: absolute;
+}
+
+#legend {
+    position: absolute;
+    top: 120px;
+}
+
+#sh0 {
+    background-color: rgb(247,251,255);
+}
+
+#sh1 {
+    background-color: rgb(222,235,247);
+}
+
+#sh2 {
+    background-color: rgb(198,219,239);
+}
+
+#sh3 {
+    background-color: rgb(158,202,225);
+}
+
+#sh4 {
+    background-color: rgb(107,174,214);
+}
+
+#sh5 {
+    background-color: rgb(66,146,198);
+}
+
+#sh6 {
+    background-color: rgb(33,113,181);
+}
+
+#sh7 {
+    background-color: rgb(8,81,156);
+}
+
+#sh8 {
+    background-color: rgb(8,48,107);
+}
+
+.shade {
+    height: 20px;
+    width: 30px;
+    float: left;
+}
+
+.lbl {
+    font-size: 11px;
+    float: left;
+    position: relative;
+    top: 20px;
+}
+
+#lbl0 {
+    right: 270px;
+}
+
+#lbl8 {
+    right: 45px;
+}
