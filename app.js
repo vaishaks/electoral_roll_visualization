@@ -35,7 +35,21 @@
             .append("path")
             .attr("class", "india")
             .attr("class", function(d) { return quantize(turnoutById.get(d.properties.ST_CODE+d.properties.PC_CODE)); })
-            .attr("d", path);
+            .attr("d", path)
+            .on("mouseover", function(d) {
+                d3.select("#tooltip")
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 70) + "px")
+                    .select("#pc-label")
+                    .html("<strong>" + d.properties.PC_NAME + 
+                          "</strong><br />Female Turnout: " + 
+                          turnoutById.get(d.properties.ST_CODE+d.properties.PC_CODE) + "%")
+                d3.select("#tooltip").classed("hidden", false);
+                console.log(d);
+            })
+            .on("mouseout", function(d) {
+                d3.select("#tooltip").classed("hidden", true);
+            });
         
         var state_geojson = topojson.feature(state, state.objects.india_state_2014);
         svg.selectAll(".state")
