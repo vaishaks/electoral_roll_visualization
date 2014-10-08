@@ -13,6 +13,14 @@
     
     var turnoutById = d3.map();
     
+    var numbers = {
+        "num1": 26.26,
+        "num2": 89.27,
+        "num3": 88.42,
+        "num4": 48.21,
+        "num5": 66.4
+    };
+    
     var quantize = d3.scale.quantize()
         .domain([23, 90])
         .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
@@ -56,32 +64,24 @@
           .enter().append("path")
           .attr("class", "state")
           .attr("d", path);
+        
+        $(".animate").each(function() {
+            $(this).animateNumber({
+                number: numbers[$(this).attr("id")] * 100,
+                numberStep: function(now, tween) {
+                        var floored_number = Math.floor(now)/100;
+                        target = $(tween.elem);
+                        floored_number = floored_number.toFixed(2);
+                        target.text(floored_number+"%");
+                    }
+                },
+                4000
+            );
+        });
+
+        $("#india-turnout-donut").circliful();
+        $(window).focus(function() {
+            window.location.reload();
+        });        
     }
-    
-    var numbers = {
-        "num1": 26.26,
-        "num2": 89.27,
-        "num3": 88.42,
-        "num4": 48.21,
-        "num5": 66.4
-    };
-    
-    $(".animate").each(function() {
-        $(this).animateNumber({
-            number: numbers[$(this).attr("id")] * 100,
-            numberStep: function(now, tween) {
-                    var floored_number = Math.floor(now)/100;
-                    target = $(tween.elem);
-                    floored_number = floored_number.toFixed(2);
-                    target.text(floored_number+"%");
-                }
-            },
-            4000
-        );
-    });
-    
-    $("#india-turnout-donut").circliful();
-    $(window).focus(function() {
-        window.location.reload();
-    });
 }());
