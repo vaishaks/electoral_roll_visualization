@@ -7,6 +7,7 @@
         <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
         <link rel="stylesheet" href="app.css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <div id="tooltip" class="hidden">
@@ -14,19 +15,41 @@
 		</div>
         <h3 id="title">Parliamentary Constituency wise Female Turnout for General Elections - 2014</h3>
         <div id="legend">
-            Legend
-            <div id="sh0" class="shade"></div>
-            <div id="sh1" class="shade"></div>
-            <div id="sh2" class="shade"></div>
-            <div id="sh3" class="shade"></div>
-            <div id="sh4" class="shade"></div>
-            <div id="sh5" class="shade"></div>
-            <div id="sh6" class="shade"></div>
-            <div id="sh7" class="shade"></div>
-            <div id="sh8" class="shade"></div>
-            <div id="lbl0" class="lbl">23%</div>
-            <div id="lbl8" class="lbl">90%</div>
+            <div id="legend-title">Legend</div>
+            <div>
+                <div id="sh0" class="shade"></div>
+                <div id="sh1" class="shade"></div>
+                <div id="sh2" class="shade"></div>
+                <div id="sh3" class="shade"></div>
+                <div id="sh4" class="shade"></div>
+                <div id="sh5" class="shade"></div>
+                <div id="sh6" class="shade"></div>
+                <div id="sh7" class="shade"></div>
+                <div id="sh8" class="shade"></div>
+                <div id="lbl0" class="lbl">23%</div>
+                <div id="lbl8" class="lbl">90%</div>
+            </div>
         </div>
+        <div id="min-pc-turnout" class="statistics">
+            <div class="subtitle">Min PC Turnout</div>
+            <div class="pc-name">Srinagar, Jammu &amp; Kashmir</div>
+            <div class="turnout-value">23.26%</div>
+        </div>
+        <div id="max-pc-turnout" class="statistics">
+            <div class="subtitle">Max PC Turnout</div>
+            <div class="pc-name">Tamluk, West Bengal</div>
+            <div class="turnout-value">89.27%</div>
+        </div>        
+        <div id="max-state-turnout" class="statistics">
+            <div class="subtitle">Max State Turnout</div>
+            <div class="pc-name">West Bengal</div>
+            <div class="turnout-value">88.42%</div>
+        </div>
+        <div id="min-state-turnout" class="statistics">
+            <div class="subtitle">Min State Turnout</div>
+            <div class="pc-name">Andaman &amp; Nicobar Islands</div>
+            <div class="turnout-value">48.21%</div>
+        </div>                
         <script src="app.js" type="application/javascript"></script>
     </body>
 </html>

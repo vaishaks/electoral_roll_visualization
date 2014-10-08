@@ -61,7 +61,7 @@ path:hover {
 
 #legend {
     position: absolute;
-    top: 120px;
+    top: 150px;
 }
 
 #sh0 {
@@ -119,4 +119,38 @@ path:hover {
 
 #lbl8 {
     right: 45px;
+}
+
+.statistics {
+    position: absolute;
+    right: 0px;
+}
+
+#min-pc-turnout {
+    right: 10px;
+}   
+
+#max-pc-turnout {
+    right: 230px;
+}
+
+#min-state-turnout {
+    top: 150px;
+    right: 10px;
+}
+
+#max-state-turnout {
+    top: 150px;
+    right: 230px;
+}
+
+.pc-name {
+    font-size: 14px;
+    color: #555;
+}
+
+.turnout-value {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    color: rgb(8,81,156);
 }
