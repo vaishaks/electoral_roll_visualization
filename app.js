@@ -81,4 +81,7 @@
     });
     
     $("#india-turnout-donut").circliful();
+    $(window).focus(function() {
+        window.location.reload();
+    });
 }());
