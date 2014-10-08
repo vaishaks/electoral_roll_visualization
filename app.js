@@ -45,7 +45,6 @@
                           "</strong><br />Female Turnout: " + 
                           turnoutById.get(d.properties.ST_CODE+d.properties.PC_CODE) + "%")
                 d3.select("#tooltip").classed("hidden", false);
-                console.log(d);
             })
             .on("mouseout", function(d) {
                 d3.select("#tooltip").classed("hidden", true);
@@ -58,4 +57,25 @@
           .attr("class", "state")
           .attr("d", path);
     }
+    
+    var numbers = {
+        "num1": 26.26,
+        "num2": 89.27,
+        "num3": 88.42,
+        "num4": 48.21
+    };
+    
+    $(".animate").each(function() {
+        $(this).animateNumber({
+            number: numbers[$(this).attr("id")] * 100,
+            numberStep: function(now, tween) {
+                    var floored_number = Math.floor(now)/100;
+                    target = $(tween.elem);
+                    floored_number = floored_number.toFixed(2);
+                    target.text(floored_number+"%");
+                }
+            },
+            4000
+        );
+    });
 }());

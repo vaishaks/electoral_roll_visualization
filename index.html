@@ -5,6 +5,7 @@
         <script src="http://d3js.org/topojson.v1.js"></script>
         <script src="http://d3js.org/queue.v1.min.js"></script>
         <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+        <script src="/scripts/jquery.animateNumber.min.js"></script>
         <link rel="stylesheet" href="app.css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -33,22 +34,22 @@
         <div id="min-pc-turnout" class="statistics">
             <div class="subtitle">Min PC Turnout</div>
             <div class="pc-name">Srinagar, Jammu &amp; Kashmir</div>
-            <div class="turnout-value">23.26%</div>
+            <div class="turnout-value animate" id="num1">23.26%</div>
         </div>
         <div id="max-pc-turnout" class="statistics">
             <div class="subtitle">Max PC Turnout</div>
             <div class="pc-name">Tamluk, West Bengal</div>
-            <div class="turnout-value">89.27%</div>
+            <div class="turnout-value animate" id="num2">89.27%</div>
         </div>        
         <div id="max-state-turnout" class="statistics">
             <div class="subtitle">Max State Turnout</div>
             <div class="pc-name">West Bengal</div>
-            <div class="turnout-value">88.42%</div>
+            <div class="turnout-value animate" id="num3">88.42%</div>
         </div>
         <div id="min-state-turnout" class="statistics">
             <div class="subtitle">Min State Turnout</div>
             <div class="pc-name">Andaman &amp; Nicobar Islands</div>
-            <div class="turnout-value">48.21%</div>
+            <div class="turnout-value animate" id="num4">48.21%</div>
         </div>                
         <script src="app.js" type="application/javascript"></script>
     </body>
