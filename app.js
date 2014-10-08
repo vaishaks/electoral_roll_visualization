@@ -1,7 +1,7 @@
 (function () {
     var projection = d3.geo.mercator()
         .center([78, 27])
-        .scale(1200);
+        .scale(1150);
 
     var path = d3.geo.path()
         .projection(projection);
