@@ -62,7 +62,8 @@
         "num1": 26.26,
         "num2": 89.27,
         "num3": 88.42,
-        "num4": 48.21
+        "num4": 48.21,
+        "num5": 66.4
     };
     
     $(".animate").each(function() {
@@ -78,4 +79,6 @@
             4000
         );
     });
+    
+    $("#india-turnout-donut").circliful();
 }());

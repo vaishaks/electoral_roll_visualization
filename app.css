@@ -154,3 +154,22 @@ path:hover {
     font-size: 40px;
     color: rgb(8,81,156);
 }
+
+#india-turnout {
+    position: absolute;
+    right: 80px;
+    top: 250px;
+}
+
+#india-turnout-label {
+    position: relative;
+    bottom: 10px;
+    left: 50px;
+}
+
+#num5 {
+    position: relative;
+    top: 150px;
+    left: 65px;
+}
+    
