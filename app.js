@@ -2,13 +2,9 @@
 (function () {
     "use strict";
     
-    var height = 610,
-        width = 600,
-        centered,
-        
-        projection = d3.geo.mercator()
-            .center([91, 26])
-            .scale(1100),
+    var projection = d3.geo.mercator()
+            .scale(1100)
+            .center([91, 26]),
         
         path = d3.geo.path()
             .projection(projection),
@@ -17,6 +13,8 @@
             .append("svg")
             .attr("height", "100%")
             .attr("width", "100%"),
+        
+        g = svg.append("g"),
         
         turnoutById = d3.map(),
         
@@ -30,7 +28,31 @@
         
         quantize = d3.scale.quantize()
             .domain([23, 90])
-            .range(d3.range(9).map(function (i) { return "q" + i + "-9"; }));
+            .range(d3.range(9).map(function (i) { return "q" + i + "-9"; })),
+        
+        point,
+        zoom = 0;
+    
+    function clicked(d) {
+        var x, y;
+        if (zoom === 0) {
+            /*jshint validthis: true*/
+            point = d3.mouse(this);
+            x = point[0];
+            y = point[1];
+            g.transition()
+                .duration(750)
+                .attr("transform", "translate(-800, -1220)scale(4)translate(" + (280 - x) + "," + (380 - y) + ")");
+            zoom = 1;
+        } else {
+            x = point[0];
+            y = point[1];
+            g.transition()
+                .duration(750)
+                .attr("transform", "scale(1)");
+            zoom = 0;
+        }
+    }
     
     function ready(error, india, state) {
         if (error) {
@@ -39,7 +61,7 @@
         
         var india_geojson = topojson.feature(india, india.objects.india_pc_2014),
             state_geojson = topojson.feature(state, state.objects.india_state_2014);
-        svg.selectAll(".india")
+        g.selectAll(".india")
             .data(india_geojson.features)
             .enter()
             .append("path")
@@ -51,16 +73,17 @@
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 70) + "px")
                     .select("#pc-label")
-                    .html("<strong>" + d.properties.PC_NAME + 
-                          "</strong><br />Female Turnout: " + 
+                    .html("<strong>" + d.properties.PC_NAME +
+                          "</strong><br />Female Turnout: " +
                           turnoutById.get(d.properties.ST_CODE + d.properties.PC_CODE) + "%");
                 d3.select("#tooltip").classed("hidden", false);
             })
             .on("mouseout", function (d) {
                 d3.select("#tooltip").classed("hidden", true);
-            });
+            })
+            .on("click", clicked);
         
-        svg.selectAll(".state")
+        g.selectAll(".state")
             .data(state_geojson.features)
             .enter().append("path")
             .attr("class", "state")
@@ -78,12 +101,12 @@
             }, 4000);
         });
         
-        $("#india-turnout-donut").circliful();     
+        $("#india-turnout-donut").circliful();
     }
-
+    
     queue()
         .defer(d3.json, "india.topojson")
         .defer(d3.json, "india_state_2014_simplified.topojson")
         .defer(d3.csv, "female_turnout.csv", function (d) { turnoutById.set(d.ST_CODE + d.PC_CODE, d.Female_Turnout); })
-        .await(ready);    
+        .await(ready);
 }());
