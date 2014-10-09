@@ -166,18 +166,26 @@ path:hover {
 #india-turnout {
     position: absolute;
     right: 80px;
-    top: 250px;
+    top: 230px;
 }
 
 #india-turnout-label {
+    font-size: 18px;
     position: relative;
     bottom: 10px;
-    left: 50px;
+    left: 40px;
 }
 
 #num5 {
     position: relative;
     top: 150px;
     left: 65px;
+}
+
+#instructions {
+    position: relative;
+    bottom: 0px;
+    font-size: 11px;
+    width: 260px;
 }
     
