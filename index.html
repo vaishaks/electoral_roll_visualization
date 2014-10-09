@@ -12,9 +12,6 @@
         <link href='//fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <div id="tooltip" class="hidden">
-			<p><span id="pc-label"></span></p>
-		</div>
         <h3 id="title">Parliamentary Constituency wise Female Turnout for General Elections - 2014</h3>
         <div id="legend">
             <div id="legend-title">Legend</div>
@@ -32,6 +29,10 @@
                 <div id="lbl8" class="lbl">90%</div>
             </div>
         </div>
+        <div id="map"></div>
+            <div id="tooltip" class="hidden">
+			<p><span id="pc-label"></span></p>
+		</div>
         <div id="min-pc-turnout" class="statistics">
             <div class="subtitle">Min PC Turnout</div>
             <div class="pc-name">Srinagar, Jammu &amp; Kashmir</div>
@@ -54,16 +55,13 @@
         </div>
         <div id="india-turnout">
             <div class="turnout-value animate" id="num5"></div>
-            <div id="india-turnout-donut" data-dimension="250"
-                 data-text="" data-info=""
-                 data-width="500"
-                 data-fontsize="15"
+            <div id="india-turnout-donut" 
+                 data-dimension="250"
+                 data-width="15"
                  data-percent="66.4"
                  data-fgcolor="#61a9dc"
                  data-bgcolor="#eee"
-                 data-icon="long-arrow-up" data-icon-size="28" 
-                 data-icon-color="#fff"
-                 data-animationstep="2.5"></div>
+                 data-animationstep="3"></div>
             <div id="india-turnout-label">India Female Turnout</div>        
         </div>
         <script src="app.js" type="application/javascript"></script>

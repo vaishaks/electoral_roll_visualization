@@ -2,6 +2,13 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+#map {
+    height: 610px;
+    width: 600px;
+    position: relative;
+    left: 275px;
+}
+
 .india {
     fill: none;
 }
@@ -123,6 +130,7 @@ path:hover {
 
 .statistics {
     position: absolute;
+    top: 20px;
     right: 0px;
 }
 
