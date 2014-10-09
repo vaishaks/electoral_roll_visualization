@@ -2,6 +2,7 @@
 (function () {
     "use strict";
     
+    $("#india-turnout-label").hide();
     var projection = d3.geo.mercator()
             .scale(1100)
             .center([91, 26]),
@@ -102,6 +103,7 @@
         });
         
         $("#india-turnout-donut").circliful();
+        $("#india-turnout-label").show();
     }
     
     queue()
