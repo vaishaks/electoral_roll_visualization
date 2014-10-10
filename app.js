@@ -74,9 +74,10 @@
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 70) + "px")
                     .select("#pc-label")
-                    .html("<strong>" + d.properties.PC_NAME +
+                    .html("<strong>" + ((d.properties.PC_NAME === null) ? "POK" : d.properties.PC_NAME)  +
                           "</strong><br />Female Turnout: " +
-                          turnoutById.get(d.properties.ST_CODE + d.properties.PC_CODE) + "%");
+                          ((turnoutById.get(d.properties.ST_CODE + d.properties.PC_CODE) === undefined) ?
+                                "0" : turnoutById.get(d.properties.ST_CODE + d.properties.PC_CODE)) + "%");
                 d3.select("#tooltip").classed("hidden", false);
             })
             .on("mouseout", function (d) {
